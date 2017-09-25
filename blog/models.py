@@ -41,6 +41,14 @@ class Post(models.Model):
         self.views += 1
         self.save(update_fields=['views'])
 
+    def save(self, *args, **kwargs):
+        if not self.excerpt:
+            md = markdown.Markdown(extensions=[
+                'markdown.extensions.extra',
+                'markdown.extensions.codehilite',
+                ])
+            self.excerpt = strip_tags(md.convert(self.body))[:54]
+        super(Post, self).save(*args, **kwargs)
     class Meta:
         ordering = ['-created_time']
     
