@@ -4,6 +4,7 @@ from .models import Post, Category
 from comments.forms import CommentForm
 
 from django.views.generic import ListView, DetailView
+from django.core.paginator import paginator, EmptyPage, PageNotAnInteger
 
 # def index(request):
 #     post_list = Post.objects.all()
