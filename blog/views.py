@@ -92,11 +92,11 @@ class IndexView(ListView):
                 first = True
 
         else :
-            left = page_range[(page_number -3) if (page_number - 3) > 0 else 0 : page_number - 1]
+            left = page_range[(page_number -3) if (page_number - 3) > 0 else 0:page_number - 1]
             right = page_range[page_number:page_number + 2]
 
             if right[-1] < total_pages - 1:
-                right_has_more = true
+                right_has_more = True
             if right[-1] < total_pages:
                 last = True
             
