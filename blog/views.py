@@ -1,6 +1,6 @@
 import markdown
 from django.shortcuts import render, get_object_or_404
-from .models import Post, Category
+from .models import Post, Category, Tag
 from comments.forms import CommentForm
 
 from django.views.generic import ListView, DetailView
