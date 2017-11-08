@@ -147,7 +147,7 @@ class PostDetailView(DetailView):
                 'markdown.extensions.extra',
                 'markdown.extensions.codehilite',
                 # 'markdown.extensions.toc',
-                TocExtension(slugify=slugify),
+                TocExtension(configs=[('slugify', slugify)]),
             ])
         post.body = md.convert(post.body)
         post.toc = md.toc
