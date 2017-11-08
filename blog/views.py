@@ -5,6 +5,7 @@ from comments.forms import CommentForm
 
 from django.views.generic import ListView, DetailView
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.utils.text import slugify
 from markdown.extensions.toc import TocExtension
 
 # def index(request):
