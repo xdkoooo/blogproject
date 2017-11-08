@@ -143,11 +143,11 @@ class PostDetailView(DetailView):
         return response
 
     def get_object(self, queryset=None):
-        md = markdown.Markdown(extensions=[
+        md = markdown.markdown(extensions=[
                 'markdown.extensions.extra',
                 'markdown.extensions.codehilite',
                 # 'markdown.extensions.toc',
-                TocExtension(configs=[('slugify', slugify)]),
+                TocExtension(slugify=slugify),
             ])
         post.body = md.convert(post.body)
         post.toc = md.toc
