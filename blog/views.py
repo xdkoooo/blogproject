@@ -143,7 +143,8 @@ class PostDetailView(DetailView):
         return response
 
     def get_object(self, queryset=None):
-        md = markdown.markdown(extensions=[
+        post = super(PostDetailView, self).get_object(queryset=None)
+        md = markdown.Markdown(extensions=[
                 'markdown.extensions.extra',
                 'markdown.extensions.codehilite',
                 # 'markdown.extensions.toc',
