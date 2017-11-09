@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 
 {% block main %}
+
     {% if error_msg %}
         <p>{{ error_msg }}</p>
     {% endif %}
+    
     {% for post in post_list %}
     <article class="post post-{{ post.pk }}">
         <header class="entry-header">
@@ -31,7 +33,7 @@
         <div class="<no-post>">暂时还没有发布的文章！</div>
     {% endfor %}
 
-    {% if is_paginated %}
+    <!-- {% if is_paginated %}
     <div class="pagination-simple">
         {% if page_obj.has_previous %}
             <a href="?page={{ page_obj.previous_page_number }}">上一页</a>
@@ -41,7 +43,7 @@
             <a href="?page={{ page_obj.next_page_number }}">下一页</a>
         {% endif %}
     </div>
-    {% endif %}
+    {% endif %} -->
 
     
     {% if is_paginated %}
